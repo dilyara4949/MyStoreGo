@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give Rating</title>
+  <style>
+    body{
+      margin: 200px 200px;
+    }
+    .input{
+      width: 200px;
+      height: 30px;
+      border: 1px solid rgb(190, 190, 190);
+    }
+    input{
+      margin: 5px 0px;
+    }
+  </style>
+</head>
+<body>
+  Rate an item from 0 to 10 <br>
+  <form  method="POST">
+    <input type="text" placeholder="item name" name="item" class="input"> <br>
+    <input type="number" name="rating" placeholder="Give rating" id="rating" class="input" min="0" max="10"><br>
+    <input type="submit" value="submit"><br>
+  </form>
+
+</body>
+</html>
