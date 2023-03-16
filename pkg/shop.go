@@ -3,14 +3,19 @@ package pkg
 import (
 	"database/sql"
 	"fmt"
+	"net/http"
 )
 
 
+func home (w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Heeeeeeello")
+}
 
 func GiveRating(name string, newRating string, db *sql.DB) {
 	rows, err := db.Query(`SELECT rating FROM lineitem where name = $1`, name)
 	CheckError(err)
 	defer rows.Close()
+	
 
 	for rows.Next() {
 		var rating string

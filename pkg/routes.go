@@ -28,6 +28,7 @@ func Routes() {
 	rtr.HandleFunc("/reg/", Registration).Methods("Post")
 	rtr.HandleFunc("/search/{item}/", searchItemByName).Methods("GET")
 	rtr.HandleFunc("/giveRating/{item}/", giveRating).Methods("PUT")
+	rtr.HandleFunc("/", home).Methods("GET")
 	// rtr.HandleFunc("/filterItemsByPrice/", filterItemsByPrice).Methods("GET")
 	// rtr.HandleFunc("/filterItemsByPrice/", filterItemsByPricePost).Methods("POST")
 	// rtr.HandleFunc("/filterItemsByRating/", filterItemsByRatingPost).Methods("POST")
@@ -41,6 +42,6 @@ func Routes() {
 	// rtr.HandleFunc("/", homePage).Methods("GET")
 
 	http.Handle("/", rtr)
-	err = http.ListenAndServe(":8000", rtr)
+	err = http.ListenAndServe(":8080", rtr)
 	CheckError(err)
 }
